@@ -9,9 +9,14 @@ import grpc
 from translator_pb2 import TranslatorRequest
 from translator_pb2_grpc import TranslationStub
 
+
+CERT = 'certs/cert.pem'
+KEY = 'certs/key.pem'
+
 translator_host = os.getenv("TRANSLATOR_HOST", "localhost")
 channel = grpc.insecure_channel(f"{translator_host}:50051")
 client = TranslationStub(channel)
+
 
 app = Flask(__name__)
 
@@ -49,4 +54,9 @@ def main():
 
 
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0')
+    if os.path.isfile(CERT) and os.path.isfile(KEY):
+        ssl_context = (CERT, KEY)
+    else:
+        ssl_context = None
+    
+    app.run(debug=True, host='0.0.0.0', threaded=True, ssl_context=ssl_context)
