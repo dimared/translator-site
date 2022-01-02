@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+
+message TranslatorRequest {
+    string source_lang = 1;
+    string target_lang = 2;
+    string source_text = 3;
+}
+
+message TranslatorResponse {
+    string target_text = 1;
+    string additional_info = 2;
+}
+
+service Translation {
+    rpc Translate (TranslatorRequest) returns (TranslatorResponse);
+}

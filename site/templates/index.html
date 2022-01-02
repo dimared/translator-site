@@ -1,0 +1,36 @@
+<!doctype html>
+
+<head>
+    <link rel="stylesheet" href="{{css}}">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="{{favicon.apple}}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{favicon.png32}}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{favicon.png16}}">
+    <link rel="manifest" href="{{favicon.webmanifest}}">
+
+    <title> RU - EN Translator 0.1 </title>
+</head>
+
+<body>
+    <form action="" method="post">
+        <div class="row justify-content-md-center">
+            <div class="form-group col-md-8">
+                <label for="exampleTextarea" class="form-label mt-4">Введите текст</label>
+                <textarea name="text" class="form-control" id="input-text" rows="8"></textarea>
+            </div>
+        </div>
+        <div class="row justify-content-md-center">
+            <button type="submit" class="btn btn-success col-md-2">Перевести</button>
+        </div>
+    </form>
+    
+    {% if translation %}
+    <div class="row justify-content-md-center">
+        <div class="form-group col-md-8">
+            <label for="exampleTextarea" class="form-label mt-4">Перевод</label>
+            <textarea name="text" class="form-control" id="input-text" rows="8">{{ translation }}</textarea>
+        </div>
+    </div>
+    {% endif %}
+
+</body>
