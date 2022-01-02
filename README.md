@@ -7,7 +7,7 @@
 2. [Site](site/__main__.py) - фронтенд на Flask, который обращается к бэкенду-переводчику. 
 
 ## SSL сертификаты:
-Можно сложить в папку [certs](certs), получить можно по [инструкции](https://certbot.eff.org/instructions?ws=other&os=ubuntubionic).
+Можно сложить в директорию [site/certs](site/certs), получить можно по [инструкции](https://certbot.eff.org/instructions?ws=other&os=ubuntubionic).
 
 ## Запуск
 ### Docker
