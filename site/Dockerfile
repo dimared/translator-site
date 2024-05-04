@@ -1,4 +1,4 @@
-FROM python
+FROM python:3.11
 
 RUN mkdir /site_service
 COPY proto/ /site_service/proto/

@@ -1,4 +1,4 @@
-FROM huggingface/transformers-cpu
+FROM huggingface/transformers-pytorch-gpu
 
 RUN mkdir /service
 COPY proto/ /service/proto/
